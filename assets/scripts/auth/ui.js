@@ -18,7 +18,7 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (error) {
-  console.log(data)
+  console.log(error)
   $('#message').text('Error on sign up. You may already be signed in.')
   $('#sign-up').show()
   resetForm($('#sign-up'))
