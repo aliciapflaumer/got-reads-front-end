@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Got Reads</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -46,6 +46,33 @@
             <fieldset>
               <h4>Sign out!</h4>
               <input type="submit" name="submit" value="Sign out">
+            </fieldset>
+          </form>
+
+          <form id="get-books">
+            <fieldset>
+              <h4>Get all books</h4>
+               <input type="text" name="credentials[id]" placeholder="Id">
+              <input type="submit" name="submit" value="Get all books">
+            </fieldset>
+          </form>
+
+          <form id="create-book">
+            <fieldset>
+              <h4>Create a book!</h4>
+               <input type="text" name="credentials[title]" placeholder="Title">
+              <input type="text" name="credentials[author]" placeholder="Author">
+              <input type="submit" name="submit" value="Create book">
+            </fieldset>
+          </form>
+
+          <form id="update-book">
+            <fieldset>
+              <h4>Update a book!</h4>
+               <input type="text" name="credentials[id]" placeholder="Id">
+               <input type="text" name="credentials[title]" placeholder="Title">
+              <input type="text" name="credentials[author]" placeholder="Author">
+              <input type="submit" name="submit" value="Update book">
             </fieldset>
           </form>
 
