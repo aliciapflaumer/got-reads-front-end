@@ -8,16 +8,16 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const onCreateBook = function (event) {
   event.preventDefault()
-  const data = getFormFields(this)
+  const data = getFormFields(event.target)
   console.log(data)
-  console.log('onCreateBook function worked!')
+  console.log('onCreateBook events function reached!')
   api.createBook(data)
     .then(ui.createBookSuccess)
     .catch(ui.createBookFailure)
 }
 
 const addHandlers = function () {
-  $('#createBook').on('submit', onCreateBook)
+  $('#create-book').on('submit', onCreateBook)
 }
 
 module.exports = {

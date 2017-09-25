@@ -16,7 +16,7 @@
       <p id='message'></p>
       <form id="sign-up">
             <fieldset>
-              <h4>Sign up!</h4>
+              <h4>Sign up</h4>
               <input type="text" name="credentials[email]" placeholder="Email">
               <input type="password" name="credentials[password]" placeholder="Password">
               <input type="password" name="credentials[password_confirmation]" placeholder="Password confirmation">
@@ -26,7 +26,7 @@
 
           <form id="sign-in">
             <fieldset>
-              <h4>Sign in!</h4>
+              <h4>Sign in</h4>
               <input type="text" name="credentials[email]" placeholder="Email">
               <input type="password" name="credentials[password]" placeholder="Password">
               <input type="submit" name="submit" value="Sign in">
@@ -35,7 +35,7 @@
 
           <form id="change-password">
             <fieldset>
-              <h4>Change password!</h4>
+              <h4>Change password</h4>
               <input type="password" name="passwords[old]" placeholder="Old password">
               <input type="password" name="passwords[new]" placeholder="New password">
               <input type="submit" name="submit" value="Change password">
@@ -44,7 +44,7 @@
 
           <form id="sign-out">
             <fieldset>
-              <h4>Sign out!</h4>
+              <h4>Sign out</h4>
               <input type="submit" name="submit" value="Sign out">
             </fieldset>
           </form>
@@ -52,26 +52,37 @@
           <form id="get-books">
             <fieldset>
               <h4>Get all books</h4>
-               <input type="text" name="credentials[id]" placeholder="Id">
               <input type="submit" name="submit" value="Get all books">
             </fieldset>
           </form>
+          <div id="book-container">
+            <div id="book-list">
+            </div>
+          </div>
 
           <form id="create-book">
             <fieldset>
-              <h4>Create a book!</h4>
-               <input type="text" name="credentials[title]" placeholder="Title">
-              <input type="text" name="credentials[author]" placeholder="Author">
+              <h4>Create a book</h4>
+               <input type="text" name="book[title]" placeholder="Title">
+              <input type="text" name="book[author]" placeholder="Author">
               <input type="submit" name="submit" value="Create book">
+            </fieldset>
+          </form>
+
+          <form id="delete-book">
+            <fieldset>
+              <h4>Delete a book</h4>
+               <input type="text" name="book[id]" placeholder="Id">
+              <input type="submit" name="submit" value="Delete a book">
             </fieldset>
           </form>
 
           <form id="update-book">
             <fieldset>
-              <h4>Update a book!</h4>
-               <input type="text" name="credentials[id]" placeholder="Id">
-               <input type="text" name="credentials[title]" placeholder="Title">
-              <input type="text" name="credentials[author]" placeholder="Author">
+              <h4>Update a book</h4>
+               <input type="text" name="book[id]" placeholder="Id">
+               <input type="text" name="book[title]" id="book_name" placeholder="Title">
+              <textarea cols="25" rows="7" name="book[status]" id="status" placeholder="Status"></textarea>
               <input type="submit" name="submit" value="Update book">
             </fieldset>
           </form>

@@ -4,14 +4,12 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-
 // auth events
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
-  // console.log(data)
+  console.log(data)
   event.preventDefault()
-  $('#sign-up').hide()
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -19,13 +17,15 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   const data = getFormFields(this)
-  // console.log(data)
+  console.log(data)
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#change-password').show()
   $('#sign-out').show()
-  $('.newGame').show()
-  $('.game-board').hide()
+  $('#create-book').show()
+  $('#update-book').show()
+  $('#delete-book').show()
+  $('#get-books').show()
 
   event.preventDefault()
   api.signIn(data)
@@ -50,8 +50,10 @@ const onSignOut = function (event) {
   $('#sign-up').show()
   $('#change-password').hide()
   $('#sign-out').hide()
-  $('.game-board').hide()
-  $('.newGame').hide()
+  $('#create-book').hide()
+  $('#update-book').hide()
+  $('#delete-book').hide()
+  $('#get-books').hide()
   api.signOut(data)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
