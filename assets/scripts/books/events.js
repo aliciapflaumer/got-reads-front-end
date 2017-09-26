@@ -34,15 +34,26 @@ const onDeleteBook = (event) => {
     .catch(ui.onDeleteBookFailure)
 }
 
+const onUpdateBook = (event) => {
+  event.preventDefault()
+  console.log('onUpdateBook events function reached!')
+  const id = getFormFields(event.target)
+  api.updateBook(id.book.id)
+    .then(ui.onUpdateBookSuccess)
+    .catch(ui.onUpdateBookFailure)
+}
+
 const addHandlers = () => {
   $('#create-book').on('submit', onCreateBook)
   $('#get-books').on('submit', onGetAllBooks)
   $('#delete-book').on('submit', onDeleteBook)
+  $('#update-book').on('submit', onUpdateBook)
 }
 
 module.exports = {
   addHandlers,
   onCreateBook,
   onGetAllBooks,
-  onDeleteBook
+  onDeleteBook,
+  onUpdateBook
 }

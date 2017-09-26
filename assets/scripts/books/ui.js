@@ -38,7 +38,7 @@ const getBookSuccess = (data) => {
 }
 
 const getBookFailure = (response) => {
-  $('#message').text('Getting books failed. Try again.')
+  $('#message').text('Oh, snap, getting some books failed. Try again.')
 }
 
 const onDeleteBookSuccess = (id) => {
@@ -53,6 +53,18 @@ const onDeleteBookFail = (response) => {
   $('#message').text('Oh snap, unable to delete a book! Try again.')
 }
 
+const onUpdateBookSuccess = (id) => {
+  console.log('onUpdateBookSuccess ui reached!')
+
+  resetForm($('#update-book'))
+  $('#message').text('You have updated a book!')
+}
+
+const onUpdateBookFailure = (response) => {
+  console.log('onUpdateBookFail ui reached!')
+  $('#message').text('Oh snap, unable to update a book! Try again.')
+}
+
 module.exports = {
   resetForm,
   createBookSuccess,
@@ -60,5 +72,7 @@ module.exports = {
   getBookSuccess,
   getBookFailure,
   onDeleteBookSuccess,
-  onDeleteBookFail
+  onDeleteBookFail,
+  onUpdateBookSuccess,
+  onUpdateBookFailure
 }

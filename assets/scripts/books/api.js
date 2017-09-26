@@ -5,7 +5,7 @@ const store = require('../store')
 
 const createBook = (data) => {
   // console.log(data)
-  // console.log('createBook api function reached!')
+  console.log('createBook api function reached!')
   return $.ajax({
     url: config.apiOrigin + '/books/',
     method: 'POST',
@@ -46,8 +46,21 @@ const deleteBook = (id) => {
   })
 }
 
+const updateBook = (id) => {
+  console.log('updateBook api function reached!')
+  return $.ajax({ // return ajax then set up, url, method, data
+    url: config.apiOrigin + '/books/' + id,
+    method: 'PATCH',
+    // add Token
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createBook,
   getBooks,
-  deleteBook
+  deleteBook,
+  updateBook
 }
