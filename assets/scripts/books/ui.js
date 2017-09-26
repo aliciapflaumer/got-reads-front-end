@@ -1,6 +1,6 @@
 'use strict'
 const showBooksTemplate = require('../templates/book-list.handlebars')
-const store = require('./../store')
+// const store = require('./../store')
 
 const resetForm = function resetForm ($form) {
   $form.find('input:text, input:password, input:file, select, textarea').val('')
@@ -20,22 +20,20 @@ const createBookFailure = (response) => {
   $('#message').text('Adding a book failed. Try again.')
 }
 
-const getBookSuccess = (response) => {
+const getBookSuccess = (data) => {
   console.log('getBooksSuccess ui reached!')
-
-  if (store.books === '') {
+  console.log(data)
+  if (data.books === '') {
     $('#message').text('You don\'t have any books. Try adding some.')
   } else {
-    $('#book-listing').show()
-    const showBookList = showBooksTemplate({ books: store.books })
+    const showBookList = showBooksTemplate({ books: data.books })
     $('#book-listing').append(showBookList)
-    $('#message').text('You have got a book!')
-    $('#show-books-button').hide()
+    $('#message').text('You have got books!')
   }
 }
 
 const getBookFailure = (response) => {
-  $('#message').text('Getting a book failed. Try again.')
+  $('#message').text('Getting books failed. Try again.')
 }
 
 module.exports = {
