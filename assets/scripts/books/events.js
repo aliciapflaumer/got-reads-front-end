@@ -6,7 +6,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 // book events
 
-const onCreateBook = function (event) {
+const onCreateBook = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log(data)
@@ -16,7 +16,7 @@ const onCreateBook = function (event) {
     .catch(ui.createBookFailure)
 }
 
-const onGetAllBooks = function (event) {
+const onGetAllBooks = (event) => {
   event.preventDefault()
   // const data = getFormFields(event.target)
   console.log('onGetAllBooks events function reached!')
@@ -25,13 +25,24 @@ const onGetAllBooks = function (event) {
     .catch(ui.getBookFailure)
 }
 
-const addHandlers = function () {
+const onDeleteBook = (event) => {
+  event.preventDefault()
+  console.log('onDeleteBook events function reached!')
+  const id = getFormFields(event.target)
+  api.deleteBook(id.book.id)
+    .then(ui.onDeleteBookSuccess)
+    .catch(ui.onDeleteBookFailure)
+}
+
+const addHandlers = () => {
   $('#create-book').on('submit', onCreateBook)
-  $('#get-books').on('click', onGetAllBooks)
+  $('#get-books').on('submit', onGetAllBooks)
+  $('#delete-book').on('submit', onDeleteBook)
 }
 
 module.exports = {
   addHandlers,
   onCreateBook,
-  onGetAllBooks
+  onGetAllBooks,
+  onDeleteBook
 }

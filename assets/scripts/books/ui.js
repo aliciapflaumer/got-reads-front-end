@@ -13,7 +13,8 @@ const createBookSuccess = (response) => {
   resetForm($('#create-book'))
   $('#message').text('You have added a book!')
   $('#get-all-books-container').show()
-  $('#show-books-button').show()
+  // $('#get-books-button').show()
+  $('#update-book').show()
 }
 
 const createBookFailure = (response) => {
@@ -21,14 +22,18 @@ const createBookFailure = (response) => {
 }
 
 const getBookSuccess = (data) => {
-  console.log('getBooksSuccess ui reached!')
-  console.log(data)
-  if (data.books === '') {
+  // console.log('getBooksSuccess ui reached!')
+  // console.log(data.books)
+  // data.books returns an empty []
+  // Linter expects ===, but works with ==
+  if (data.books == '') {
     $('#message').text('You don\'t have any books. Try adding some.')
+    $('#update-book').show()
   } else {
     const showBookList = showBooksTemplate({ books: data.books })
     $('#book-listing').append(showBookList)
     $('#message').text('You have got books!')
+    // $('#get-books-button').hide()
   }
 }
 
@@ -36,10 +41,24 @@ const getBookFailure = (response) => {
   $('#message').text('Getting books failed. Try again.')
 }
 
+const onDeleteBookSuccess = (id) => {
+  // console.log('onDeleteBookSuccess ui reached!')
+
+  resetForm($('#delete-book'))
+  $('#message').text('You have deleted a book!')
+  $('#book-listing').empty(id)
+}
+
+const onDeleteBookFail = (response) => {
+  $('#message').text('Oh snap, unable to delete a book! Try again.')
+}
+
 module.exports = {
   resetForm,
   createBookSuccess,
   createBookFailure,
   getBookSuccess,
-  getBookFailure
+  getBookFailure,
+  onDeleteBookSuccess,
+  onDeleteBookFail
 }

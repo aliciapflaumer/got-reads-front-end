@@ -1,9 +1,9 @@
 {{#each books as |book|}}
 
-<ul data-id="{{book.id}}">
+<ul id="book-listing" data-id="{{book.id}}">
   <li>Book ID: {{book.id}}</li>
   <li>Title: {{book.title}}</li>
   <li>Author: {{book.author}}</li>
-  <li><button class="remove-button">Remove Book</button></p>
+  <!-- <li><button class="remove-button">Remove Book</button></p> -->
 </ul>
 {{/each}}

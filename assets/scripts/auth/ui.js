@@ -27,8 +27,8 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   // console.log(data)
   console.log('Arrived at Sign in success!')
-
   $('#message').text('Successfully signed in')
+  $('#update-book').show()
   store.user = data.user
   // console.log('store.user console log data is ' + data.user)
   resetForm($('#sign-in'))
@@ -42,6 +42,9 @@ const signInFailure = function (error) {
   $('#sign-up').show()
   $('#change-password').hide()
   $('#sign-out').hide()
+  $('#get-books').hide()
+  $('#create-book').hide()
+  $('#update-book').hide()
   resetForm($('#sign-up'))
 }
 
@@ -61,6 +64,7 @@ const signOutSuccess = function () {
   console.log('Successfully signed out')
   $('#message').text('Successfully signed out!')
   store.user = null // empty store
+  $('#book-listing').hide()
 }
 
 const signOutFailure = function (error) {
