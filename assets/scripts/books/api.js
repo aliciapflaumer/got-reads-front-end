@@ -19,6 +19,23 @@ const createBook = function (data) {
     })
 }
 
+const getBooks = function (data) {
+  console.log(data)
+  console.log('getBooks api function reached!')
+  return $.ajax({
+    url: config.apiOrigin + '/books/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+    .then((response) => {
+      store.book = response.book
+    })
+}
+
 module.exports = {
-  createBook
+  createBook,
+  getBooks
 }
