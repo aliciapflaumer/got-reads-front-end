@@ -1,4 +1,5 @@
 'use strict'
+const showBooksTemplate = require('../templates/book-list.handlebars')
 const store = require('./../store')
 
 const resetForm = function resetForm ($form) {
@@ -11,6 +12,8 @@ const createBookSuccess = (response) => {
   console.log('createBookSuccess ui reached!')
   resetForm($('#create-book'))
   $('#message').text('You have added a book!')
+  $('#get-all-books-container').show()
+  $('#show-books-button').show()
 }
 
 const createBookFailure = (response) => {
@@ -19,7 +22,16 @@ const createBookFailure = (response) => {
 
 const getBookSuccess = (response) => {
   console.log('getBooksSuccess ui reached!')
-  $('#message').text('You have got a book!')
+
+  if (store.books === '') {
+    $('#message').text('You don\'t have any books. Try adding some.')
+  } else {
+    $('#book-listing').show()
+    const showBookList = showBooksTemplate({ books: store.books })
+    $('#book-listing').append(showBookList)
+    $('#message').text('You have got a book!')
+    $('#show-books-button').hide()
+  }
 }
 
 const getBookFailure = (response) => {

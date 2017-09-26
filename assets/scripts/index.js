@@ -10,6 +10,7 @@ $(() => {
 
   $('#sign-up').show()
   $('#sign-in').show()
+  $('#get-all-books-container').hide()
 
   authEvents.addHandlers()
   booksEvents.addHandlers()
