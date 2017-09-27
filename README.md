@@ -67,6 +67,6 @@ html file. Solved.
 
 ## Wireframes
 
-![ERD](https://imgur.com/Dg2aETG)
+![ERD](https://i.imgur.com/Dg2aETG.jpg)
 
-![Tables](https://imgur.com/2Zja4j1)
+![Tables](https://i.imgur.com/2Zja4j1.jpg?1)
