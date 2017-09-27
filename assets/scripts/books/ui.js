@@ -55,7 +55,6 @@ const onDeleteBookFail = (response) => {
 
 const onUpdateBookSuccess = (id) => {
   console.log('onUpdateBookSuccess ui reached!')
-
   resetForm($('#update-book'))
   $('#message').text('You have updated a book!')
 }

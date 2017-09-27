@@ -33,6 +33,7 @@ const signInSuccess = function (data) {
   // console.log('store.user console log data is ' + data.user)
   resetForm($('#sign-in'))
   // console.log('Is the form empty now?')
+  resetForm($('#update-book'))
 }
 
 const signInFailure = function (error) {
@@ -45,7 +46,8 @@ const signInFailure = function (error) {
   $('#get-books').hide()
   $('#create-book').hide()
   $('#update-book').hide()
-  resetForm($('#sign-up'))
+  $('#delete-book').hide()
+  resetForm($('#sign-in'))
 }
 
 const changePasswordSuccess = function () {

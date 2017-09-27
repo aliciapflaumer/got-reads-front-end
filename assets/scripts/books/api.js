@@ -20,7 +20,7 @@ const createBook = (data) => {
 }
 
 const getBooks = () => {
-  // console.log('getBooks api function reached!')
+  console.log('getBooks api function reached!')
   return $.ajax({
     url: config.apiOrigin + '/books/',
     method: 'GET',
@@ -31,7 +31,7 @@ const getBooks = () => {
     .then((response) => {
       store.books = response.books
       return store
-})
+    })
 }
 
 const deleteBook = (id) => {
