@@ -10,7 +10,7 @@ const resetForm = function resetForm ($form) {
 
 const signUpSuccess = function (data) {
   // console.log(data)
-  console.log('Successfully signed up')
+  // console.log('Successfully signed up')
   $('#message').text('Successfully signed up')
   $('#sign-up').show()
   resetForm($('#sign-up'))
