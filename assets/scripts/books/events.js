@@ -9,8 +9,8 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const onCreateBook = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  console.log('onCreateBook events function reached!')
+  // console.log(data)
+  // console.log('onCreateBook events function reached!')
   api.createBook(data)
     .then(ui.createBookSuccess)
     .catch(ui.createBookFailure)
@@ -19,7 +19,7 @@ const onCreateBook = (event) => {
 const onGetAllBooks = (event) => {
   event.preventDefault()
   // const data = getFormFields(event.target)
-  console.log('onGetAllBooks events function reached!')
+  // console.log('onGetAllBooks events function reached!')
   api.getBooks()
     .then(ui.getBookSuccess)
     .catch(ui.getBookFailure)
@@ -27,7 +27,7 @@ const onGetAllBooks = (event) => {
 
 const onDeleteBook = (event) => {
   event.preventDefault()
-  console.log('onDeleteBook events function reached!')
+  // console.log('onDeleteBook events function reached!')
   const id = getFormFields(event.target)
   api.deleteBook(id.book.id)
     .then(ui.onDeleteBookSuccess)
@@ -38,7 +38,10 @@ const onUpdateBook = (event) => {
   event.preventDefault()
   console.log('onUpdateBook events function reached!')
   const id = getFormFields(event.target)
+  // console.log(event.target) // targeting the form
+  console.log('What is this variable? ', id)
   api.updateBook(id.book.id)
+  // console.log(id.book.id) // returns 74
     .then(ui.onUpdateBookSuccess)
     .catch(ui.onUpdateBookFailure)
 }

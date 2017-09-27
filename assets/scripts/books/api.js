@@ -5,7 +5,7 @@ const store = require('../store')
 
 const createBook = (data) => {
   // console.log(data)
-  console.log('createBook api function reached!')
+  // console.log('createBook api function reached!')
   return $.ajax({
     url: config.apiOrigin + '/books/',
     method: 'POST',
@@ -20,7 +20,7 @@ const createBook = (data) => {
 }
 
 const getBooks = () => {
-  console.log('getBooks api function reached!')
+  // console.log('getBooks api function reached!')
   return $.ajax({
     url: config.apiOrigin + '/books/',
     method: 'GET',

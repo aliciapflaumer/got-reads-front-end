@@ -9,7 +9,7 @@ const resetForm = function resetForm ($form) {
 }
 
 const createBookSuccess = (response) => {
-  console.log('createBookSuccess ui reached!')
+  // console.log('createBookSuccess ui reached!')
   resetForm($('#create-book'))
   $('#message').text('You have added a book!')
   $('#get-all-books-container').show()
@@ -31,6 +31,7 @@ const getBookSuccess = (data) => {
     $('#update-book').show()
   } else {
     const showBookList = showBooksTemplate({ books: data.books })
+    $('#book-listing').empty()
     $('#book-listing').append(showBookList)
     $('#message').text('You have got books!')
     // $('#get-books-button').hide()
@@ -43,7 +44,6 @@ const getBookFailure = (response) => {
 
 const onDeleteBookSuccess = (id) => {
   // console.log('onDeleteBookSuccess ui reached!')
-
   resetForm($('#delete-book'))
   $('#message').text('You have deleted a book!')
   $('#book-listing').empty(id)

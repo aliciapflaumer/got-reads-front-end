@@ -17,8 +17,8 @@ const signUpSuccess = function (data) {
   // console.log('Is the form empty now?')
 }
 
-const signUpFailure = function (error) {
-  console.log(error)
+const signUpFailure = function (data) {
+  // console.log(data)
   $('#message').text('Error on sign up. You may already be signed in.')
   $('#sign-up').show()
   resetForm($('#sign-up'))
@@ -26,7 +26,7 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (data) {
   // console.log(data)
-  console.log('Arrived at Sign in success!')
+  // console.log('Arrived at Sign in success!')
   $('#message').text('Successfully signed in')
   $('#update-book').show()
   store.user = data.user
@@ -36,8 +36,8 @@ const signInSuccess = function (data) {
   resetForm($('#update-book'))
 }
 
-const signInFailure = function (error) {
-  console.log(error)
+const signInFailure = function (data) {
+  // console.log(data)
   $('#message').text('Error on sign in. Did you enter your email and password correct?')
   $('#sign-in').show()
   $('#sign-up').show()
@@ -51,26 +51,26 @@ const signInFailure = function (error) {
 }
 
 const changePasswordSuccess = function () {
-  console.log('Successfully changed password')
+  // console.log('Successfully changed password')
   $('#message').text('Successfully changed password!')
   resetForm($('#change-password'))
 }
 
-const changePasswordFailure = function (error) {
-  console.log(error)
+const changePasswordFailure = function (data) {
+  // console.log(error)
   $('#message').text('Error on change password!')
   resetForm($('#sign-up'))
 }
 
 const signOutSuccess = function () {
-  console.log('Successfully signed out')
+  // console.log('Successfully signed out')
   $('#message').text('Successfully signed out!')
   store.user = null // empty store
   $('#book-listing').hide()
 }
 
-const signOutFailure = function (error) {
-  console.log(error)
+const signOutFailure = function (data) {
+  // console.log(data)
   $('#message').text('Error on sign out!')
 }
 
