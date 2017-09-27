@@ -36,11 +36,13 @@ const onDeleteBook = (event) => {
 
 const onUpdateBook = (event) => {
   event.preventDefault()
-  console.log('onUpdateBook events function reached!')
-  const id = getFormFields(event.target)
+  // console.log('onUpdateBook events function reached!')
+  const data = getFormFields(event.target)
   // console.log(event.target) // targeting the form
-  console.log('What is this variable? ', id)
-  api.updateBook(id.book.id)
+  // console.log('What is this variable? ', id)
+  // It is an object with a book property, it is not just an ID.
+  // Renamed variable to data
+  api.updateBook(data)
   // console.log(id.book.id) // returns 74
     .then(ui.onUpdateBookSuccess)
     .catch(ui.onUpdateBookFailure)

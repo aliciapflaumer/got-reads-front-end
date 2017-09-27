@@ -34,7 +34,6 @@ const getBookSuccess = (data) => {
     $('#book-listing').empty()
     $('#book-listing').append(showBookList)
     $('#message').text('You have got books!')
-    // $('#get-books-button').hide()
   }
 }
 
@@ -54,13 +53,13 @@ const onDeleteBookFail = (response) => {
 }
 
 const onUpdateBookSuccess = (id) => {
-  console.log('onUpdateBookSuccess ui reached!')
+  // console.log('onUpdateBookSuccess ui reached!')
   resetForm($('#update-book'))
   $('#message').text('You have updated a book\'s status!')
 }
 
 const onUpdateBookFailure = (response) => {
-  console.log('onUpdateBookFail ui reached!')
+  // console.log('onUpdateBookFail ui reached!')
   $('#message').text('Oh snap, unable to update a book\'s status! Try again.')
 }
 

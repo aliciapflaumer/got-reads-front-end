@@ -35,7 +35,7 @@ const getBooks = () => {
 }
 
 const deleteBook = (id) => {
-  console.log('deleteBook api function reached!')
+  // console.log('deleteBook api function reached!')
   return $.ajax({ // return ajax then set up, url, method, data
     url: config.apiOrigin + '/books/' + id,
     method: 'DELETE',
@@ -46,15 +46,16 @@ const deleteBook = (id) => {
   })
 }
 
-const updateBook = (id) => {
-  console.log('updateBook api function reached!')
+const updateBook = (data) => {
+  // console.log('updateBook api function reached!')
   return $.ajax({ // return ajax then set up, url, method, data
-    url: config.apiOrigin + '/books/' + id,
+    url: config.apiOrigin + '/books/' + data.book.id,
     method: 'PATCH',
     // add Token
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
