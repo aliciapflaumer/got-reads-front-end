@@ -67,6 +67,10 @@ html file. Solved.
 
 ## Wireframes
 
+![First sketch](https://i.imgur.com/oK7g8q1.jpg)
+
+![Second final sketch](https://i.imgur.com/VQH93JU.jpg)
+
 ![ERD](https://i.imgur.com/Dg2aETG.jpg)
 
 ![Tables](https://i.imgur.com/2Zja4j1.jpg?1)
