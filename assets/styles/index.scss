@@ -1,8 +1,11 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$background-color: lightblue;
+
 body {
-  background-color: lightblue;
+  background-color: $background-color;
+  text-align: center;
 }
 
 #book-listing {

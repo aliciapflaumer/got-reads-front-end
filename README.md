@@ -14,7 +14,7 @@ GotReads, is a book tracking app that users can keep track of books they want to
 
 ## The GotReads Front End (Client)
 
-The front end is written in html, css, javascript,handlebars and bootstrap.
+The front end is written in html, css, javascript, handlebars.
 
 ## The GotReads Back End (Server)
 
@@ -73,4 +73,4 @@ html file. Solved.
 
 ![ERD](https://i.imgur.com/Dg2aETG.jpg)
 
-![Tables](https://i.imgur.com/2Zja4j1.jpg?1)
+![Tables](https://i.imgur.com/2Zja4j1.jpg)
