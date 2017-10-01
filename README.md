@@ -37,13 +37,13 @@ A user has many Books.
 
 ## Approach to building GotReads
 
-I approached building GotReads differently than the Tic-Tac-Toe game. I felt more comfortable with the code and had a clearer focus. I first started with a big plan with my sketches which quickly dwindled down to just the bare minimum, I developed a checklist, and a chart depicting the steps to take through the process.
+I approached building GotReads similiarly to the Tic-Tac-Toe game, with making a chart and lists of what's done and to be done. I felt more comfortable with the code and had a clearer focus. I first started with a big plan with my sketches which quickly dwindled down to just the bare minimum, I developed a checklist, and a chart depicting the steps to take through the process.
 
 [Workflow Checklist](https://github.com/aliciapflaumer/gotReads-backend/blob/master/checklist.md)
 
 ## Issues I encountered
 
-- In testing my app, I discovered a bug that led to a larger problem on the backend. [Read issue for that here](https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/issues/928)
+- In testing my app, I discovered a bug that led to a larger problem on the backend – with the database not existing. Solved.
 
 - I had an issue with deployment. I had missed a couple of steps in the heroku setup
 guide. Solved.
