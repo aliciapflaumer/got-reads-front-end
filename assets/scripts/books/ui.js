@@ -32,6 +32,7 @@ const getBookSuccess = (data) => {
   } else {
     const showBookList = showBooksTemplate({ books: data.books })
     $('#book-listing').empty()
+    $('#book-listing').show()
     $('#book-listing').append(showBookList)
     $('#message').text('You have got books!')
   }
@@ -42,14 +43,14 @@ const getBookFailure = (response) => {
 }
 
 const onDeleteBookSuccess = (id) => {
-  console.log('onDeleteBookSuccess ui reached!')
+  // console.log('onDeleteBookSuccess ui reached!')
   resetForm($('#delete-book'))
   $('#message').text('You have deleted a book!')
   $('#book-listing').empty(id)
 }
 
 const onDeleteBookFailure = (response) => {
-  console.log('onDeleteBookFailure ui reached!')
+  // console.log('onDeleteBookFailure ui reached!')
   $('#message').text('Oh snap, unable to delete a book! Did you type the ID number correctly? Try again.')
 }
 
