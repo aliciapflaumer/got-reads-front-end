@@ -42,14 +42,15 @@ const getBookFailure = (response) => {
 }
 
 const onDeleteBookSuccess = (id) => {
-  // console.log('onDeleteBookSuccess ui reached!')
+  console.log('onDeleteBookSuccess ui reached!')
   resetForm($('#delete-book'))
   $('#message').text('You have deleted a book!')
   $('#book-listing').empty(id)
 }
 
-const onDeleteBookFail = (response) => {
-  $('#message').text('Oh snap, unable to delete a book! Try again.')
+const onDeleteBookFailure = (response) => {
+  console.log('onDeleteBookFailure ui reached!')
+  $('#message').text('Oh snap, unable to delete a book! Did you type the ID number correctly? Try again.')
 }
 
 const onUpdateBookSuccess = (id) => {
@@ -70,7 +71,7 @@ module.exports = {
   getBookSuccess,
   getBookFailure,
   onDeleteBookSuccess,
-  onDeleteBookFail,
+  onDeleteBookFailure,
   onUpdateBookSuccess,
   onUpdateBookFailure
 }
