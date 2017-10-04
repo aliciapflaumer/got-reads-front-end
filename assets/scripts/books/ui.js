@@ -13,7 +13,6 @@ const createBookSuccess = (response) => {
   resetForm($('#create-book'))
   $('#message').text('You have added a book!')
   $('#get-all-books-container').show()
-  // $('#get-books-button').show()
   $('#update-book').show()
 }
 
@@ -58,6 +57,7 @@ const onUpdateBookSuccess = (id) => {
   // console.log('onUpdateBookSuccess ui reached!')
   resetForm($('#update-book'))
   $('#message').text('You have updated a book\'s status!')
+  $('#book-listing').empty(id)
 }
 
 const onUpdateBookFailure = (response) => {
