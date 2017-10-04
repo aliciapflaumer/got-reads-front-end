@@ -18,14 +18,6 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   const data = getFormFields(this)
   // console.log(data)
-  $('#sign-in').hide()
-  $('#sign-up').hide()
-  $('#change-password').show()
-  $('#sign-out').show()
-  $('#create-book').show()
-  $('#update-book').show()
-  $('#delete-book').show()
-  $('#get-books').show()
 
   event.preventDefault()
   api.signIn(data)

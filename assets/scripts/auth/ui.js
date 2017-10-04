@@ -25,6 +25,14 @@ const signUpFailure = function (data) {
 }
 
 const signInSuccess = function (data) {
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#change-password').show()
+  $('#sign-out').show()
+  $('#create-book').show()
+  $('#update-book').show()
+  $('#delete-book').show()
+  $('#get-books').show()
   // console.log(data)
   // console.log('Arrived at Sign in success!')
   $('#message').text('Successfully signed in')
