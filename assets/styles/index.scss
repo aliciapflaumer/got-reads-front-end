@@ -4,12 +4,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: lightblue;
 
 body {
-  background-color: $background-color;
+  // background-color: $background-color;
+  background-image: url(/images/resize_1200_freestocks-org-139132.jpg);
   text-align: center;
+  color: #000;
 }
 
 footer {
-  margin-top: 5%,
+  margin-top: 5%;
+}
+
+h1 {
+    font-family: cursive;
 }
 
 #book-listing {
