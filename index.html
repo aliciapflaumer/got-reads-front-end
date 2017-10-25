@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Got Reads</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <h1>Got Reads</h1>
+      <p id='message'></p>
+      <form id="sign-up">
+            <fieldset>
+              <h4>Sign up</h4>
+              <input type="text" name="credentials[email]" placeholder="Username">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Password confirmation">
+              <input type="submit" name="submit" value="Sign up">
+            </fieldset>
+          </form>
+
+          <form id="sign-in">
+            <fieldset>
+              <h4>Sign in</h4>
+              <input type="text" name="credentials[email]" placeholder="Username">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" name="submit" value="Sign in">
+            </fieldset>
+          </form>
+
+          <form id="change-password">
+            <fieldset>
+              <h4>Change password</h4>
+              <input type="password" name="passwords[old]" placeholder="Old password">
+              <input type="password" name="passwords[new]" placeholder="New password">
+              <input type="submit" name="submit" value="Change password">
+            </fieldset>
+          </form>
+
+          <form id="sign-out">
+            <fieldset>
+              <h4>Sign out</h4>
+              <input type="submit" name="submit" value="Sign out">
+            </fieldset>
+          </form>
+
+
+
+            <form id="get-books">
+              <h4>Get all books</h4>
+              <fieldset>
+                <div id="get-books-button">
+                  <input type="submit" name="submit" value="Get all books">
+                </div>
+              </fieldset>
+            </form>
+          <div id="get-all-books-container">
+            <div id="book-listing"></div>
+          </div>
+
+          <form id="create-book">
+            <fieldset>
+              <h4>Create a book</h4>
+               <input type="text" name="book[title]" placeholder="Title">
+              <input type="text" name="book[author]" placeholder="Author">
+              <input type="text" name="book[newstatus]" placeholder="Book status">
+              <input type="submit" name="submit" value="Create book">
+            </fieldset>
+          </form>
+
+          <form id="delete-book">
+            <fieldset>
+              <h4>Delete a book</h4>
+               <input type="text" name="book[id]" id="id" placeholder="Id">
+              <input type="submit" name="submit" value="Delete a book">
+            </fieldset>
+          </form>
+
+          <form id="update-book">
+            <fieldset>
+              <h4>Update a book status</h4>
+              <p>Are you currently reading it? Read it? Saving for later?</p>
+               <input type="text" name="book[id]" id="book-id-update" placeholder="Book Id here">
+               <input type="text" name="book[newstatus]" id="book-status-update" placeholder="New status here">
+              <input type="submit" name="submit" value="Update book status">
+            </fieldset>
+          </form>
+
+      <footer>Made by Alicia Pflaumer | Follow her code on <a href="https://github.com/aliciapflaumer">Github</a></footer>
+    </body>
+</html>
