@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "boom": "^7.2.0",
-    "hoek": "^5.0.3",
     "jquery": "^3.3.1"
   },
   "devDependencies": {
